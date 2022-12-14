@@ -5,20 +5,18 @@ import { StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform
 import { FontAwesome5, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, View } from '../../components/Themed'; 
 
+export interface InputProps {
+  messageSent: (newText: string) => void;
+}
 
 
-const MessageInput = () => {
+const MessageInput = ({messageSent} : InputProps) => {
 
     const [ message, setMessage ] = useState('');
 
-    const sendMessage = () => {
-        console.warn('send message') ;
-        setMessage('');
-    }
-
     const onPress = () => {
         if (message) {
-            sendMessage();
+          messageSent(message);
         } else {
             null
         }
@@ -35,7 +33,6 @@ const MessageInput = () => {
         <FontAwesome5 name="smile" size={20} color="grey" />
         <TextInput 
             style={styles.textInput} 
-            
             value={message}
             onChangeText={setMessage}
             placeholder='Message'
