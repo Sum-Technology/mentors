@@ -1,0 +1,30 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mentors-staging-195254-authRole",
+      "UnauthRoleArn": "arn:aws:iam::007685077545:role/amplify-mentors-staging-195254-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::007685077545:role/amplify-mentors-staging-195254-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mentors-staging-195254-deployment",
+      "UnauthRoleName": "amplify-mentors-staging-195254-unauthRole",
+      "StackName": "amplify-mentors-staging-195254",
+      "StackId": "arn:aws:cloudformation:us-east-1:007685077545:stack/amplify-mentors-staging-195254/129848a0-77fb-11ed-98e0-125efd291111",
+      "AmplifyAppId": "d2htcs3xr3jq8t",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mentors-staging-195254-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "Mentors": {}
+      },
+      "function": {
+        "MentorsPostConfirmation": {
+          "deploymentBucketName": "amplify-mentors-staging-195254-deployment",
+          "s3Key": "amplify-builds/MentorsPostConfirmation-6874716f5552646f3537-build.zip"
+        }
+      },
+      "api": {
+        "Mentors": {}
+      }
+    }
+  }
+}

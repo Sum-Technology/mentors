@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "Mentors",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-mentors-staging-195254-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/39dc828f0a2bdb2d9fc04d12dc422d7ae4698e4b"
+}

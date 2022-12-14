@@ -1,0 +1,126 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mentors-staging-195254-authRole",
+      "UnauthRoleArn": "arn:aws:iam::007685077545:role/amplify-mentors-staging-195254-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::007685077545:role/amplify-mentors-staging-195254-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mentors-staging-195254-deployment",
+      "UnauthRoleName": "amplify-mentors-staging-195254-unauthRole",
+      "StackName": "amplify-mentors-staging-195254",
+      "StackId": "arn:aws:cloudformation:us-east-1:007685077545:stack/amplify-mentors-staging-195254/129848a0-77fb-11ed-98e0-125efd291111",
+      "AmplifyAppId": "d2htcs3xr3jq8t",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mentors-staging-195254-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    }
+  },
+  "auth": {
+    "Mentors": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "MentorsPostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::007685077545:role/sns3f163398195254-staging",
+        "UserPoolId": "us-east-1_oXElXxyzM",
+        "AppClientIDWeb": "3ocrsghco7r6r76l28plsoe2j",
+        "AppClientID": "7d34c3tpshcbmlkclbto1ccl9d",
+        "IdentityPoolId": "us-east-1:8feb0aea-e9f7-4584-901e-871311961420",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:007685077545:userpool/us-east-1_oXElXxyzM",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "Mentors"
+      },
+      "lastPushTimeStamp": "2022-12-11T15:47:39.640Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-mentors-staging-195254-deployment/amplify-cfn-templates/auth/Mentors-cloudformation-template.json",
+        "logicalId": "authMentors"
+      },
+      "lastPushDirHash": "oFFeUI6TcvThXbzwws7HprC9drg="
+    }
+  },
+  "api": {
+    "Mentors": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "uagsoxml5jdrthrrjhxymqwnei",
+        "GraphQLAPIEndpointOutput": "https://yvhlgcsy7jgtbbzm4jn33op5ny.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-lxvizpxatrfqrlmoyv6obgp3ey"
+      },
+      "lastPushTimeStamp": "2022-12-11T15:47:39.587Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-mentors-staging-195254-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiMentors"
+      }
+    }
+  },
+  "function": {
+    "MentorsPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:007685077545:function:MentorsPostConfirmation-staging",
+        "Name": "MentorsPostConfirmation-staging",
+        "LambdaExecutionRole": "MentorsPostConfirmation-staging"
+      },
+      "lastPushTimeStamp": "2022-12-11T15:47:39.640Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-mentors-staging-195254-deployment/amplify-cfn-templates/function/MentorsPostConfirmation-cloudformation-template.json",
+        "logicalId": "functionMentorsPostConfirmation"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-mentors-staging-195254-deployment",
+        "s3Key": "amplify-builds/MentorsPostConfirmation-6874716f5552646f3537-build.zip"
+      },
+      "lastBuildTimeStamp": "2022-12-11T15:46:07.726Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-12-11T15:46:07.749Z",
+      "distZipFilename": "MentorsPostConfirmation-6874716f5552646f3537-build.zip",
+      "lastPushDirHash": "v5wS6GF9sf9/Iq7tw+ptN1zdKLM="
+    }
+  }
+}
